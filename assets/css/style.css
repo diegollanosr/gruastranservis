@@ -418,6 +418,12 @@ p{
 #prev { left: 0; }
 #next { right: 0; }
 
+@media (max-width: 875px) {
+    .especific_target {
+        width: 45vw;
+        /* min-width: 345px; */
+    }
+}    
 @media (max-width: 855px) {
     .inicio{
         height: calc(100vw / 16 * 4.5 + 200px);
@@ -447,15 +453,24 @@ p{
         width: 100%;
         justify-content: space-around;
     }
+    .nav_li{
+        width: 25%;
+        text-align: center;
+    }
+    .nav_link{
+        font-size: clamp(13px, 1vw, 40px);
+        padding: initial;
+            }
     .btn_wts{
         bottom: calc(2vw + 65px);
     }
     .footer{
         padding: 10px 0 80px;
     }
-    .especific_target {
-        min-width: 345px;
+    .text_servicio{
+        width: 90%;
     }
+
 }
 @media (max-width: 780px) {
     .contacto_target{
@@ -500,7 +515,7 @@ p{
     }
     .especific_target {
         min-width: 320px;
-        width: 55vw;
+        width: 75vw;
         max-width: initial;
     }
     .boton_inicio{
