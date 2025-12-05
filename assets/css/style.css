@@ -1,19 +1,41 @@
 :root{
+    color-scheme: light dark;
     --color-blanco: #E4E7EE;
     --color-negro: #06111e;
     --color-rojo-1: #EE3238;
     --color-rojo-2: #820000;
+    --color-rojo-3: #AF1517;
     --color-dorado: #FF9500;
     --color-amarillo: #ffaf00;
-    --color-verde: #27D045;
+    --color-verde: #1ab837;
     --color-gris: #333335;
     --color--background: var(--color-blanco);
     --color--texto: var(--color-negro);
-
+    --color--footer: var(--color-gris);
+    --color--border: var(--color-rojo-2);
+    --color--nav: var(--color-negro);
+    --color--subtitulo: var(--color-rojo-1);
+    
     --font-general: 'Alice', serif;
     --font-subtitulo: "Fugaz One", sans-serif;
     --img-logo: url(../imagenes/logo_ts.svg) no-repeat center;
     --img-camion: url(../imagenes/camion.png) no-repeat center;
+    --color--hyf: var(--color-gris);
+    --shadow: none;
+}
+.dark{
+    --shadow: 2px 2px 4px #000000d2;
+    --color-verde: #27D045;
+    --color-blanco: #e7ecfa;
+    --color-rojo-1: #df272d;
+    --color-rojo-2: #6d0505;
+    --color-rojo-3: #bf1010;
+    --color--nav: #07080c;
+    --color--hyf: #0f121a;
+    --color--border: var(--color-rojo-1);
+    --color--texto: var(--color-blanco);
+    --color--background: var(--color-gris);
+    --color--subtitulo: var(--color--border);
  }
  *{
     transition: all .5s;
@@ -35,6 +57,7 @@ button{
     font-family: var(--font-general);
     font-size: clamp(20px, 1.3vw, 45px);
     line-height: 1.2;
+    color: var(--color--texto);
 }
 .header{
     width: 100%;
@@ -45,10 +68,10 @@ button{
     height: 100px;
     position: fixed;
     z-index: 1000;
-    color: var(--color--background);
+    color: var(--color-blanco);
 }
 .scroll .header{
-    background: var(--color-gris);
+    background: var(--color--hyf);
     height: 75px;
 }
 .scroll .logo_img{
@@ -104,11 +127,9 @@ button{
     font-family: var(--font-subtitulo);
 }
 .nav_link.active{
-    color: var(--color-blanco);
     background: linear-gradient(to right, var(--color-rojo-1), var(--color-rojo-2))
 }
 .nav_link:hover{
-    color: var(--color-blanco);
     background: linear-gradient(to right, var(--color-rojo-2), var(--color-rojo-1))
 }
 .btn_wts {
@@ -228,11 +249,12 @@ button{
 .subtitulo{
     width: 90%;
     margin: auto;
-    color: var(--color-rojo-1);
+    color: var(--color--subtitulo);
     text-align: center;
     font-size: clamp(30px, 2.9vw, 47px);
     font-weight: bold;
     font-family: var(--font-subtitulo);
+    text-shadow: var(--shadow);
 }
 p{
     font-size: clamp(20px, 1.6vw, 37px);
@@ -267,7 +289,7 @@ p{
     background: var(--color-rojo-1);
 }
 .servicio_target:nth-child(2){
-    background: #AF1517;
+    background: var(--color-rojo-3);
 }
 .servicio_target:nth-child(3){
     background: var(--color-rojo-2);
@@ -277,6 +299,7 @@ p{
     text-align: center;
     font-weight: bold;
     font-size: clamp(22px, 1.8vw, 40px);
+    text-shadow: var(--shadow);
 }
 .servicio_target_icon{
     text-align: center;
@@ -298,7 +321,7 @@ p{
     gap: 20px;
     padding-bottom: 20px;
     border-radius: 15px;
-    border: 2px solid var(--color-rojo-2);
+    border: 2px solid var(--color--border);
     margin-bottom: 20px;
 }
 .especific_target img{
@@ -310,9 +333,10 @@ p{
     margin: auto;
     font-weight: bold;
     text-align: center;
-    color: var(--color-rojo-2);
+    color: var(--color--border);
     font-family: var(--font-subtitulo);
     font-size: clamp(22px, 1.5vw, 40px);
+    text-shadow: var(--shadow);
 }
 .especific_target_text{
     width: 90%;
@@ -336,7 +360,7 @@ p{
 .iframe_contacto{
     width: 55vw;
     height: 30vw;
-    border: 3px solid var(--color-rojo-2);
+    border: 3px solid var(--color--border);
     border-radius: 15px;
 }
 .contact_info{
@@ -353,7 +377,7 @@ p{
 }
 .contac_link{
     text-align: center;
-    color: var(--color-negro);
+    color: var(--color--texto);
     text-wrap: wrap;
 }
 .footer{
@@ -364,7 +388,7 @@ p{
     align-items: center;
     flex-direction: column;
     align-items: center;
-    background: var(--color-gris);
+    background: var(--color--hyf);
     color: var(--color-blanco);
     font-size: clamp(18px, 1.25vw, 60px);
     margin-top: 5vh;
@@ -421,7 +445,6 @@ p{
 @media (max-width: 875px) {
     .especific_target {
         width: 45vw;
-        /* min-width: 345px; */
     }
 }    
 @media (max-width: 855px) {
@@ -443,9 +466,10 @@ p{
         width: 100%;
         bottom: 0;
         height: 60px;
-        background: var(--color-negro);
+        background: var(--color--nav);
     }
     .nav_ul {
+        border-top: 3px solid var(--color--border);
         display: flex;
         align-items: center;
         height: 100%;
@@ -458,7 +482,7 @@ p{
         text-align: center;
     }
     .nav_link{
-        font-size: clamp(11px, 1vw, 40px);
+        font-size: clamp(15px, 1vw, 40px);
         padding: initial;
             }
     .btn_wts{
@@ -502,7 +526,17 @@ p{
 }
 @media (max-width: 650px) {
     .header{
-        background: var(--color-gris);
+        background: var(--color--hyf);
+    }
+    .logo_img{
+        width: 45px;
+        height: 45px;
+        border-width: 5px;
+    }
+    .scroll .logo_img{
+        width: 35px;
+        height: 35px;
+        border-width: 5px;
     }
     .inicio{
         margin-top: 100px;
@@ -524,7 +558,7 @@ p{
     .nav_link{
         padding: 0 1vw;
         box-sizing: border-box;
-        font-size: clamp(15px, 1vw, 40px);
+        font-size: clamp(11px, 2.3vw, 40px);
     }
 }
 @media (max-width: 500px) {
