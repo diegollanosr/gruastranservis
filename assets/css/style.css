@@ -125,6 +125,10 @@ button{
     letter-spacing: 2px;
     font-size: clamp(18px, 1.2vw, 40px);
     font-family: var(--font-subtitulo);
+    cursor: pointer;
+}
+.botonModoOscuro{
+    cursor: pointer;
 }
 .nav_link.active{
     background: linear-gradient(to right, var(--color-rojo-1), var(--color-rojo-2))
